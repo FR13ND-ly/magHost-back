@@ -1,6 +1,6 @@
 FROM node:18 AS build
 
-WORKDIR /app
+WORKDIR /
 
 COPY package*.json ./
 
