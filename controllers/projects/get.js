@@ -10,6 +10,7 @@ export default async (req, res) => {
     if (urlParts.length > 1) {
         let subdomain = urlParts[0]
         const project = await ProjectModel.findOne({ name: subdomain })
+        console.log(urlParts, project)
         if (!project) res.send("Not found")
         docker.getContainer(project.name).inspect((err, containerInfo) => {
             const portMapping =
